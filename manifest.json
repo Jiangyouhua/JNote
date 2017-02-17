@@ -1,0 +1,35 @@
+﻿{
+    "manifest_version": 2,
+    "author": "jiangyouhua",
+    "description": "Get more out of your screen captures! Free - Cross Browser - Multiple Page Screen Capture - Rich Annotation - Awesome!",
+    "name": "JNote:Screen Capture, Screenshot, Annotation",
+    "version": "1.0",
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "storage",
+        "activeTab",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": [
+            "js/jquery-3.1.1.min.js",
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["js/jquery-3.1.1.min.js", "js/JNote.js"],
+        "css": ["css/JNote.css"]
+    }],
+    "browser_action": {
+        "default_icon": {
+            "30": "icons/note-30.png",
+            "48": "icons/note-48.png",
+            "96": "icons/note-96.png"
+        },
+        "default_title": "云笔记"
+            //    "default_popup": "popup.html"  // 显示popup.html
+    }
+    // "options_page": "options.html"
+}
